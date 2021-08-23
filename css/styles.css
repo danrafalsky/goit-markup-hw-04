@@ -38,7 +38,9 @@ img {
   --filter-buttons-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --header-border-color: #ececec;
+  --regular-customers-icon-border: #afb1b8;
   --portfolio-border-color: #eeeeee;
+  --portfolio-items-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   /* Цвета ФОНОВ и ТЕКСТА */
   --invisible-heading: rgba(0%, 0%, 0%, 0%);
   --heading-color: #212121;
@@ -46,6 +48,7 @@ img {
   --bg-color-first: #ffffff;
   --bg-color-second: #f5f4fa;
   --bg-color-third: #2f303a;
+  --bg-color-hero: rgba(47, 48, 58, 0.4);
   --bg-color-main: #e5e5e5;
   --text-color-first: #212121;
   --text-color-second: #757575;
@@ -114,6 +117,7 @@ ul {
 }
 
 .header-links-list li {
+  align-items: center;
   margin-right: 50px;
 }
 
@@ -135,7 +139,7 @@ ul {
 }
 
 .header-kontakts-list {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   margin-left: auto;
 }
@@ -149,6 +153,8 @@ ul {
 }
 
 .header-kontakts {
+  display: inline-flex;
+  align-items: center;
   color: var(--text-color-second);
   font-size: 14px;
   font-weight: 500;
@@ -161,6 +167,24 @@ ul {
   color: var(--chromatic-color);
 }
 
+.icon-mail::before {
+  display: block;
+  content: "";
+  min-width: 16px;
+  min-height: 12px;
+  margin-right: 10px;
+  background-color: red;
+}
+
+.icon-phone::before {
+  display: block;
+  content: "";
+  min-width: 10px;
+  min-height: 16px;
+  margin-right: 10px;
+  background-color: blue;
+}
+
 /* ФУТЕР */
 
 .page-footer {
@@ -171,6 +195,11 @@ ul {
 }
 
 .page-footer-list {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-address-list {
   margin-top: 20px;
 }
 
@@ -214,6 +243,27 @@ ul {
   color: var(--text-color-third);
 }
 
+/* социальные сети в футере */
+
+.join {
+  display: inline;
+  background-color: red;
+  margin-left: 70px;
+}
+
+.join h3 {
+  color: var(--text-color-third);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0px 0px 20px 0px;
+}
+
+
 /* ГЛАВНАЯ */
 
 /* Заголовки уровней 1 и 2 */
@@ -241,9 +291,18 @@ ul {
   margin-bottom: 50px;
 }
 
-/* Секция "Заказать услугу" */
+/* Секция "Героя" */
 
-.order-service-section {
+.hero-section {
+  background-image: linear-gradient(
+    to right,
+    var(--bg-color-hero),
+    var(--bg-color-hero)
+    ),
+    url("../images/bg-hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: var(--bg-color-third);
   padding-top: 200px;
   padding-bottom: 200px;
@@ -279,6 +338,34 @@ ul {
 }
 
 /* положительные характеристики */
+
+.characteristics-icon::before {
+  content: "";
+  display: block;
+  background-color: var(--bg-color-second);
+  height: 120px;
+  margin-bottom: 30px;
+  padding: 25px 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.characteristics-icon:nth-child(1)::before {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.characteristics-icon:nth-child(2)::before {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.characteristics-icon:nth-child(3)::before {
+  background-image: url("../images/portf-03.jpg");
+}
+
+.characteristics-icon:nth-child(4)::before {
+  background-image: url("../images/portf-04.jpg");
+}
 
 .characteristics {
   display: flex;
@@ -334,20 +421,21 @@ ul {
   letter-spacing: 0.03em;
 }
 
-.our-team ul {
+.our-team-list {
   display: flex;
   justify-content: center;
 }
 
-.our-team li {
+.our-team-items {
   background-color: var(--bg-color-first);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   margin-right: 30px;
+  padding-bottom: 30px;
 }
 
-.our-team li:last-child {
+.our-team-items:last-child {
   margin-right: 0px;
 }
 
@@ -364,8 +452,189 @@ ul {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
-  margin: 0px 0px 30px 0px;
 }
+
+/* Иконки Социальных Сетей */
+
+.social-network-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-network-icons li {
+  display: inline-block;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.social-network-icons li:last-child {
+  margin-right: 0px;
+}
+
+.social-network-icons li:nth-child(1) {
+  background-image: url("../images/portf-03.jpg");
+}
+
+.social-network-icons li:nth-child(2) {
+  background-image: url("../images/portf-03.jpg");
+}
+
+.social-network-icons li:nth-child(3) {
+  background-image: url("../images/portf-03.jpg");
+}
+
+.social-network-icons li:nth-child(4) {
+  background-image: url("../images/portf-03.jpg");
+}
+
+.social-network-icons li:nth-child(1):hover,
+.social-network-icons li:nth-child(1):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.social-network-icons li:nth-child(2):hover,
+.social-network-icons li:nth-child(2):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.social-network-icons li:nth-child(3):hover,
+.social-network-icons li:nth-child(3):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.social-network-icons li:nth-child(4):hover,
+.social-network-icons li:nth-child(4):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+/* Иконки соц.сетей для Футера */
+
+footer .social-network-icons li:nth-child(1) {
+  background-image: url("../images/portf-06.jpg");
+}
+
+footer .social-network-icons li:nth-child(2) {
+  background-image: url("../images/portf-06.jpg");
+}
+
+footer .social-network-icons li:nth-child(3) {
+  background-image: url("../images/portf-06.jpg");
+}
+
+footer .social-network-icons li:nth-child(4) {
+  background-image: url("../images/portf-06.jpg");
+}
+
+footer .social-network-icons li:nth-child(1):hover,
+footer .social-network-icons li:nth-child(1):focus {
+  background-image: url("../images/portf-05.jpg");
+}
+
+footer .social-network-icons li:nth-child(2):hover,
+footer .social-network-icons li:nth-child(2):focus {
+  background-image: url("../images/portf-05.jpg");
+}
+
+footer .social-network-icons li:nth-child(3):hover,
+footer .social-network-icons li:nth-child(3):focus {
+  background-image: url("../images/portf-05.jpg");
+}
+
+footer .social-network-icons li:nth-child(4):hover,
+footer .social-network-icons li:nth-child(4):focus {
+  background-image: url("../images/portf-05.jpg");
+}
+
+/* Секция "Постоянные Клиенты" */
+
+.regular-customers {
+  background-color: var(--bg-color-first);
+}
+
+.regular-customers ul {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.regular-customers li {
+  display: inline-block;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  margin-right: 30px;
+  border: 1px solid var(--regular-customers-icon-border);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-position: center;
+  background-color: rgb(241, 255, 238);
+  cursor: pointer;
+}
+
+.regular-customers li:last-child {
+  margin-right: 0px;
+}
+
+.regular-customers li:nth-child(1) {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.regular-customers li:nth-child(2) {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.regular-customers li:nth-child(3) {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.regular-customers li:nth-child(4) {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.regular-customers li:nth-child(5) {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.regular-customers li:nth-child(6) {
+  background-image: url("../images/portf-01.jpg");
+}
+
+.regular-customers li:nth-child(1):hover,
+.regular-customers li:nth-child(1):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.regular-customers li:nth-child(2):hover,
+.regular-customers li:nth-child(2):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.regular-customers li:nth-child(3):hover,
+.regular-customers li:nth-child(3):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.regular-customers li:nth-child(4):hover,
+.regular-customers li:nth-child(4):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.regular-customers li:nth-child(5):hover,
+.regular-customers li:nth-child(5):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+.regular-customers li:nth-child(6):hover,
+.regular-customers li:nth-child(6):focus {
+  background-image: url("../images/portf-02.jpg");
+}
+
+
 
 /* ПОРТФОЛИО */
 
@@ -435,8 +704,18 @@ ul {
   margin-bottom: 30px;
   margin-right: 30px;
   text-align: left;
-  /* параметры border */
-  box-shadow: inset 0px 0px 0px 1px var(--portfolio-border-color);
+}
+
+.portfolio-items-border {
+  box-sizing: border-box;
+  padding: 20px 0px 20px 24px;
+  border: 1px solid var(--portfolio-border-color);
+  border-top: 0px;
+}
+
+.portfolio-items:hover,
+.portfolio-items:focus {
+  box-shadow: var(--portfolio-items-shadow);
 }
 
 .portfolio-items:nth-child(3n + 3) {
@@ -454,7 +733,7 @@ ul {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin: 20px 0px 4px 24px;
+  margin: 0px 0px 4px 0px;
 }
 
 .portfolio-items p {
@@ -462,5 +741,5 @@ ul {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-  margin: 0px 0px 20px 24px;
+  margin: 0px;
 }
