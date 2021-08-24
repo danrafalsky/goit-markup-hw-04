@@ -38,14 +38,15 @@ img {
   --filter-buttons-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --header-border-color: #ececec;
-  --regular-customers-icon-border: #afb1b8;
   --portfolio-border-color: #eeeeee;
   --portfolio-items-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   /* Цвета ФОНОВ и ТЕКСТА */
   --invisible-heading: rgba(0%, 0%, 0%, 0%);
+  --icons-color: #afb1b8;
   --heading-color: #212121;
   --footer-kontakts-color: rgba(100%, 100%, 100%, 60%);
+  --bg-join-icons: rgba(100%, 100%, 100%, 10%);
   --bg-color-first: #ffffff;
   --bg-color-second: #f5f4fa;
   --bg-color-third: #2f303a;
@@ -161,35 +162,27 @@ ul {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  stroke: red;
-  fill: green;
 }
 
 .header-kontakts:hover,
 .header-kontakts:focus {
   color: var(--chromatic-color);
-  stroke: red;
-  fill: green;
 }
 
-.icon-mail::before {
+.icon-mail {
   display: block;
-  content: "";
+  fill: currentColor;
   min-width: 16px;
   min-height: 12px;
   margin-right: 10px;
-  background-image: url("../images/icons.svg#icon-mail");
-  color: red;
 }
 
-.icon-phone::before {
+.icon-phone {
   display: block;
-  content: "";
+  fill: currentColor;
   min-width: 10px;
   min-height: 16px;
   margin-right: 10px;
-  background-image: url(../images/icon-phone.svg);
-  fill: red;
 }
 
 /* ФУТЕР */
@@ -262,13 +255,11 @@ ul {
 
 .join {
   display: inline;
-  background-color: red;
   margin-left: 70px;
 }
 
 .join h3 {
   color: var(--text-color-third);
-  font-family: Roboto;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -276,6 +267,47 @@ ul {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin: 0px 0px 20px 0px;
+}
+
+/* Иконки Социальных Сетей */
+
+.social-network-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-network-list li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.social-network-list li:last-child {
+  margin-right: 0px;
+}
+
+.social-network-links .social-network-icons {
+  fill: var(--icons-color);
+  background-color: var(--bg-color-first);
+}
+
+.join .social-network-icons {
+  fill: var(--text-color-third);
+  background-color: var(--bg-join-icons);
+}
+
+.social-network-icons:hover,
+.social-network-icons:focus {
+  fill: var(--text-color-third);
+  background-color: var(--chromatic-color);
+}
+
+.social-network-icons {
+  fill: currentColor;
+  background-color: currentColor;
+  display: block;
+  max-width: 44px;
+  max-height: 44px;
+  border-radius: 50%;
 }
 
 /* ГЛАВНАЯ */
@@ -453,72 +485,6 @@ ul {
   text-align: center;
 }
 
-/* Иконки Социальных Сетей */
-
-.social-network-icons {
-  display: flex;
-  justify-content: center;
-}
-
-.social-network-icons li {
-  display: flex;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  margin-right: 10px;
-  cursor: pointer;
-  fill: red;
-  stroke: green;
-}
-
-.social-network-icons li:hover,
-.social-network-icons li:focus {
-  background-color: var(--chromatic-color);
-}
-
-.social-network-icons li:last-child {
-  margin-right: 0px;
-}
-
-/* Иконки соц.сетей для Футера */
-
-footer .social-network-icons li:nth-child(1) {
-  background-image: url("../images/portf-06.jpg");
-}
-
-footer .social-network-icons li:nth-child(2) {
-  background-image: url("../images/portf-06.jpg");
-}
-
-footer .social-network-icons li:nth-child(3) {
-  background-image: url("../images/portf-06.jpg");
-}
-
-footer .social-network-icons li:nth-child(4) {
-  background-image: url("../images/portf-06.jpg");
-}
-
-footer .social-network-icons li:nth-child(1):hover,
-footer .social-network-icons li:nth-child(1):focus {
-  background-image: url("../images/portf-05.jpg");
-}
-
-footer .social-network-icons li:nth-child(2):hover,
-footer .social-network-icons li:nth-child(2):focus {
-  background-image: url("../images/portf-05.jpg");
-}
-
-footer .social-network-icons li:nth-child(3):hover,
-footer .social-network-icons li:nth-child(3):focus {
-  background-image: url("../images/portf-05.jpg");
-}
-
-footer .social-network-icons li:nth-child(4):hover,
-footer .social-network-icons li:nth-child(4):focus {
-  background-image: url("../images/portf-05.jpg");
-}
-
 /* Секция "Постоянные Клиенты" */
 
 .regular-customers {
@@ -542,11 +508,20 @@ footer .social-network-icons li:nth-child(4):focus {
   margin-right: 0px;
 }
 
+.regular-customers a {
+  color: var(--icons-color);
+}
+
+.regular-customers a:hover,
+.regular-customers a:focus {
+  color: var(--chromatic-color);
+}
+
 .regular-customers-icon {
-  fill: red;
+  fill: currentColor;
   width: 170px;
   height: 92px;
-  border: 1px solid var(--regular-customers-icon-border);
+  border: 1px solid currentColor;
   box-sizing: border-box;
   border-radius: 4px;
 }
