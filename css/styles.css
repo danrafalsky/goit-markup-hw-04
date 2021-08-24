@@ -161,11 +161,15 @@ ul {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  stroke: red;
+  fill: green;
 }
 
 .header-kontakts:hover,
 .header-kontakts:focus {
   color: var(--chromatic-color);
+  stroke: red;
+  fill: green;
 }
 
 .icon-mail::before {
@@ -174,7 +178,8 @@ ul {
   min-width: 16px;
   min-height: 12px;
   margin-right: 10px;
-  background-color: red;
+  background-image: url("../images/icons.svg#icon-mail");
+  color: red;
 }
 
 .icon-phone::before {
@@ -183,7 +188,8 @@ ul {
   min-width: 10px;
   min-height: 16px;
   margin-right: 10px;
-  background-color: blue;
+  background-image: url(../images/icon-phone.svg);
+  fill: red;
 }
 
 /* ФУТЕР */
@@ -386,25 +392,25 @@ ul {
   height: 120px;
   margin-bottom: 30px;
   padding: 25px 0px;
-  background-size: contain;
+  background-size: 70px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .characteristics-icon:nth-child(1)::before {
-  background-image: url("../images/portf-01.jpg");
+  background-image: url("../images/characteristic-01-antenna.svg");
 }
 
 .characteristics-icon:nth-child(2)::before {
-  background-image: url("../images/portf-02.jpg");
+  background-image: url("../images/characteristic-02-clock.svg");
 }
 
 .characteristics-icon:nth-child(3)::before {
-  background-image: url("../images/portf-03.jpg");
+  background-image: url("../images/characteristic-03-diagram.svg");
 }
 
 .characteristics-icon:nth-child(4)::before {
-  background-image: url("../images/portf-04.jpg");
+  background-image: url("../images/characteristic-04-astronaut.svg");
 }
 
 /* Секция "ЧЕМ МЫ ЗАНИМАЕМСЯ" */
@@ -475,54 +481,24 @@ ul {
 }
 
 .social-network-icons li {
-  display: inline-block;
+  display: flex;
   justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   margin-right: 10px;
-  background-position: center;
   cursor: pointer;
+  fill: red;
+  stroke: green;
+}
+
+.social-network-icons li:hover,
+.social-network-icons li:focus {
+  background-color: var(--chromatic-color);
 }
 
 .social-network-icons li:last-child {
   margin-right: 0px;
-}
-
-.social-network-icons li:nth-child(1) {
-  background-image: url("../images/portf-03.jpg");
-}
-
-.social-network-icons li:nth-child(2) {
-  background-image: url("../images/portf-03.jpg");
-}
-
-.social-network-icons li:nth-child(3) {
-  background-image: url("../images/portf-03.jpg");
-}
-
-.social-network-icons li:nth-child(4) {
-  background-image: url("../images/portf-03.jpg");
-}
-
-.social-network-icons li:nth-child(1):hover,
-.social-network-icons li:nth-child(1):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.social-network-icons li:nth-child(2):hover,
-.social-network-icons li:nth-child(2):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.social-network-icons li:nth-child(3):hover,
-.social-network-icons li:nth-child(3):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.social-network-icons li:nth-child(4):hover,
-.social-network-icons li:nth-child(4):focus {
-  background-image: url("../images/portf-02.jpg");
 }
 
 /* Иконки соц.сетей для Футера */
