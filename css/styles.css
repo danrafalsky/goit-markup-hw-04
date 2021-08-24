@@ -385,32 +385,12 @@ ul {
   letter-spacing: 0.03em;
 }
 
-.characteristics-icon::before {
-  content: "";
-  display: block;
+.characteristics-icon {
   background-color: var(--bg-color-second);
+  width: 270px;
   height: 120px;
   margin-bottom: 30px;
   padding: 25px 0px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.characteristics-icon:nth-child(1)::before {
-  background-image: url("../images/characteristic-01-antenna.svg");
-}
-
-.characteristics-icon:nth-child(2)::before {
-  background-image: url("../images/characteristic-02-clock.svg");
-}
-
-.characteristics-icon:nth-child(3)::before {
-  background-image: url("../images/characteristic-03-diagram.svg");
-}
-
-.characteristics-icon:nth-child(4)::before {
-  background-image: url("../images/characteristic-04-astronaut.svg");
 }
 
 /* Секция "ЧЕМ МЫ ЗАНИМАЕМСЯ" */
@@ -554,73 +534,21 @@ footer .social-network-icons li:nth-child(4):focus {
 .regular-customers li {
   display: inline-block;
   justify-content: center;
-  width: 170px;
-  height: 92px;
-  margin-right: 30px;
-  border: 1px solid var(--regular-customers-icon-border);
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-position: center;
-  background-color: rgb(241, 255, 238);
   cursor: pointer;
+  margin-right: 30px;
 }
 
 .regular-customers li:last-child {
   margin-right: 0px;
 }
 
-.regular-customers li:nth-child(1) {
-  background-image: url("../images/portf-01.jpg");
-}
-
-.regular-customers li:nth-child(2) {
-  background-image: url("../images/portf-01.jpg");
-}
-
-.regular-customers li:nth-child(3) {
-  background-image: url("../images/portf-01.jpg");
-}
-
-.regular-customers li:nth-child(4) {
-  background-image: url("../images/portf-01.jpg");
-}
-
-.regular-customers li:nth-child(5) {
-  background-image: url("../images/portf-01.jpg");
-}
-
-.regular-customers li:nth-child(6) {
-  background-image: url("../images/portf-01.jpg");
-}
-
-.regular-customers li:nth-child(1):hover,
-.regular-customers li:nth-child(1):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.regular-customers li:nth-child(2):hover,
-.regular-customers li:nth-child(2):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.regular-customers li:nth-child(3):hover,
-.regular-customers li:nth-child(3):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.regular-customers li:nth-child(4):hover,
-.regular-customers li:nth-child(4):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.regular-customers li:nth-child(5):hover,
-.regular-customers li:nth-child(5):focus {
-  background-image: url("../images/portf-02.jpg");
-}
-
-.regular-customers li:nth-child(6):hover,
-.regular-customers li:nth-child(6):focus {
-  background-image: url("../images/portf-02.jpg");
+.regular-customers-icon {
+  fill: red;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--regular-customers-icon-border);
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 /* ПОРТФОЛИО */
